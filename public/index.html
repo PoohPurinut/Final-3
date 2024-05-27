@@ -31,6 +31,12 @@
         event.preventDefault();
         const formData = new FormData(this);
         const data = {};
+        var selectedValue = {};
+        var selectTag = document.getElementById('select-option');
+        selectTag.addEventListener('change', function () {
+          var selectOption = selectTag.value;
+          selectedValue['selectedService'] = selectOption;
+        })
         formData.forEach((value, key) => {
           data[key] = value;
         });
@@ -47,7 +53,7 @@
                 { type: "text", text: "Name:", weight: "bold" },
                 { type: "text", text: data.name },
                 { type: "text", text: "Phone Number:", weight: "bold" },
-                { type: "text", text: data.phoneNumber },          
+                { type: "text", text: data.phoneNumber },
                 { type: "text", text: "Email:", weight: "bold" },
                 { type: "text", text: data.email },
                 { type: "text", text: "House Number:", weight: "bold" },
@@ -88,6 +94,16 @@
       <label for="name">House Number:</label><br>
       <input type="text" id="houseNumber" name="houseNumber"><br>
       <input type="submit" value="Submit">
+      <select class="form-control" style="color: #495057;" id="select-option">
+        <option value="เลือกบริการที่ต้องการ">เลือกบริการที่ต้องการ</option>
+        <option value="บริการตกแต่งภายใน">บริการตกแต่งภายใน</option>
+        <option value="บริการต่อเติมบ้าน">บริการต่อเติมบ้าน</option>
+        <option value="บริการติดตั้งตะแกรงกันงู">บริการติดตั้งตะแกรงกันงู</option>
+        <option value="บริการติดตั้งรางน้ำฝนไวนิล VG">บริการติดตั้งรางน้ำฝนไวนิล VG</option>
+        <option value="บริการประกันภัยบ้าน">บริการประกันภัยบ้าน</option>
+        <option value="บริการติดตั้งไม้พื้นสังเคราห์">บริการติดตั้งไม้พื้นสังเคราห์</option>
+        <option value="บริการติดตั้งโซลาร์เซลล์">บริการติดตั้งโซลาร์เซลล์</option>
+      </select>
     </form>
   </div>
 </body>
