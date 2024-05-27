@@ -34,6 +34,10 @@
         formData.forEach((value, key) => {
           data[key] = value;
         });
+        var selectElement = document.getElementById("select-option");
+        selectElement.addEventListener('change',() => {
+          var selectedValue = selectElement.value;
+        })
         const flexMessage = {
           type: "flex",
           altText: "This is a Flex Message",
@@ -51,7 +55,9 @@
                 { type: "text", text: "Email:", weight: "bold" },
                 { type: "text", text: data.email },
                 { type: "text", text: "House Number:", weight: "bold" },
-                { type: "text", text: data.houseNumber }
+                { type: "text", text: data.houseNumber },
+                { type: "text", text: "Service:", weight: "bold" },
+                { type: "text", text: selectedValue }
               ]
             }
           }
