@@ -26,21 +26,6 @@
     }
 
     async function runApp() {
-      const formHTML = `
-          <form id="myForm">
-            Test Test Test
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="name">Phone Number:</label><br>
-            <input type="text" id="phoneNumber" name="phoneNumber"><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br>
-            <label for="name">House Number:</label><br>
-            <input type="text" id="houseNumber" name="houseNumber"><br>
-            <input type="submit" value="Submit">
-          </form>
-        `;
-      document.getElementById("formContainer").innerHTML = formHTML;
 
       document.getElementById("myForm").addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -61,12 +46,12 @@
               contents: [
                 { type: "text", text: "Name:", weight: "bold" },
                 { type: "text", text: data.name },
-                { type: "text", text: "Phone Number:", weight: "bold" },
-                { type: "text", text: data.phoneNumber },          
+                // { type: "text", text: "Phone Number:", weight: "bold" },
+                // { type: "text", text: data.phoneNumber },          
                 { type: "text", text: "Email:", weight: "bold" },
-                { type: "text", text: data.email },
-                { type: "text", text: "House Number:", weight: "bold" },
-                { type: "text", text: data.houseNumber }
+                { type: "text", text: data.email }
+                // { type: "text", text: "House Number:", weight: "bold" },
+                // { type: "text", text: data.houseNumber }
               ]
             }
           }
@@ -91,7 +76,20 @@
 </head>
 
 <body>
-  <div id="formContainer"></div>
+  <div id="formContainer">
+    <form id="myForm">
+      Test Test Test
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+      <!-- <label for="name">Phone Number:</label><br>
+      <input type="number" id="phoneNumber" name="phoneNumber"><br> -->
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br>
+      <!-- <label for="name">House Number:</label><br>
+      <input type="text" id="houseNumber" name="houseNumber"><br> -->
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 </body>
 
 </html>
