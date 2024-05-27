@@ -34,10 +34,6 @@
         formData.forEach((value, key) => {
           data[key] = value;
         });
-        var selectElement = document.getElementById("select-option");
-        selectElement.addEventListener('change',() => {
-          var selectedValue = selectElement.value;
-        })
         const flexMessage = {
           type: "flex",
           altText: "This is a Flex Message",
@@ -56,8 +52,8 @@
                 { type: "text", text: data.email },
                 { type: "text", text: "House Number:", weight: "bold" },
                 { type: "text", text: data.houseNumber },
-                { type: "text", text: "Service:", weight: "bold" },
-                { type: "text", text: selectedValue }
+                { type: "text", text: "Selected Option:", weight: "bold" },
+                { type: "text", text: data.selectedOption }
               ]
             }
           }
@@ -94,7 +90,7 @@
       <label for="name">House Number:</label><br>
       <input type="text" id="houseNumber" name="houseNumber"><br>
       <input type="submit" value="Submit">
-      <select class="form-control" style="color: #495057;" id="select-option">
+      <select class="form-control" style="color: #495057;" id="select-option" name="selectedOption">
         <option value="เลือกบริการที่ต้องการ">เลือกบริการที่ต้องการ</option>
         <option value="บริการตกแต่งภายใน">บริการตกแต่งภายใน</option>
         <option value="บริการต่อเติมบ้าน">บริการต่อเติมบ้าน</option>
