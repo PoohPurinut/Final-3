@@ -31,12 +31,6 @@
         event.preventDefault();
         const formData = new FormData(this);
         const data = {};
-        var selectedValue = {};
-        var selectTag = document.getElementById('select-option');
-        selectTag.addEventListener('change', function () {
-          var selectOption = selectTag.value;
-          selectedValue['selectedService'] = selectOption;
-        })
         formData.forEach((value, key) => {
           data[key] = value;
         });
@@ -57,9 +51,7 @@
                 { type: "text", text: "Email:", weight: "bold" },
                 { type: "text", text: data.email },
                 { type: "text", text: "House Number:", weight: "bold" },
-                { type: "text", text: data.houseNumber },
-                { type: "text", text: "Service:", weight: "bold" },
-                { type: "text", text: selectedValue }
+                { type: "text", text: data.houseNumber }
               ]
             }
           }
